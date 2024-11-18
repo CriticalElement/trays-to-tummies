@@ -1,0 +1,113 @@
+@use 'mixins.scss';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+
+    --text: black;
+    --primary: #FF85C0;
+    --secondary: black;
+    --accent: #FF99CA;
+
+    --padding-16: 1rem;
+    --padding-20: 1.25rem;
+    --padding-24: 1.5rem;
+    --padding-32: 2rem;
+    --padding-48: 3rem;
+    --padding-64: 4rem;
+    --padding-96: 6rem;
+    --padding-128: 8rem;
+
+    --page-padding: var(--padding-32);
+    @media screen and (max-width: 27.5rem) {
+        --page-padding: var(--padding-16);
+    }
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    color: var(--text);
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+h1 {
+    @include title-lg;
+}
+
+h2 {
+    @include title-md;
+}
+
+h3 {
+    @include title-sm;
+}
+
+p {
+    @include paragraph;
+}
+
+a {
+    color: var(--text);
+}
+
+#hero {
+    background: var(--primary);
+    padding: var(--padding-128) var(--padding-32) var(--padding-64) var(--padding-32);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--padding-96);
+    align-self: stretch;
+}
+
+section {
+    padding: var(--padding-64) var(--page-padding);
+    scroll-margin-top: var(--padding-64);
+
+    .section-container {
+        max-width: 86rem;
+        margin: 0 auto;
+    }
+}
