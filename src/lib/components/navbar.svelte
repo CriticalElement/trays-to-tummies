@@ -53,5 +53,15 @@
             gap: var(--padding-16);
             flex: 1 0 0;
         }
+
+        @media screen and (max-width: 64rem) {
+            .page-links {
+                justify-content: flex-end;
+            }
+
+            .outbound-links {
+                flex: 0 0 0;
+            }
+        }
     }
 </style>

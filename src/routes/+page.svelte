@@ -11,8 +11,6 @@
 			trays-to-tummies also collects school supplies to support students’ learning.
 		</p>
 		<iframe
-			width="560"
-			height="315"
 			src="https://www.youtube.com/embed/Djxcy8ApOF0?si=qt1O2Kjn_3sq9w4H"
 			title="YouTube video player"
 			frameborder="0"
@@ -105,6 +103,24 @@
 			p {
 				max-width: 30rem;
 			}
+
+			@media screen and (max-width: 64rem) {
+				flex-direction: column;
+				align-items: center;
+			}
+
+			iframe {
+				width: 560px;
+				height: 315px;
+				@media screen and (max-width: 64rem) {
+					width: 100%;
+					height: 315px;
+				}
+			}
+		}
+
+		@media screen and (max-width: 48rem) {
+			gap: var(--padding-64);
 		}
 	}
 
@@ -114,6 +130,7 @@
 		flex-direction: column;
 		align-items: center;
 		gap: var(--padding-64);
+		text-align: center;
 
 		.stats {
 			display: flex;
@@ -129,6 +146,14 @@
 				align-items: center;
 				gap: var(--padding-16);
 			}
+
+			@media screen and (max-width: 86rem) {
+				flex-wrap: wrap;
+				
+				.divider {
+					display: none;
+				}
+			}
 		}
 	}
 
@@ -141,6 +166,11 @@
 				display: flex;
 				flex-direction: column;
 				gap: var(--padding-32);
+			}
+
+			@media screen and (max-width: 48rem) {
+				flex-direction: column;
+				align-items: center;
 			}
 		}
 	}
@@ -174,6 +204,15 @@
 					align-items: center;
 					gap: 1rem;
 					flex: 1 0 0;
+				}
+
+				@media screen and (max-width: 64rem) {
+					flex-direction: column;
+					align-items: center;
+					
+					.divider {
+						display: none;
+					}
 				}
 			}
 		}

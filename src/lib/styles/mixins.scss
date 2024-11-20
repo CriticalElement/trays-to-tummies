@@ -10,16 +10,28 @@
     font-weight: 500;
     font-style: normal;
     font-size: 6rem;
+
+    @media screen and (max-width: 48rem) {
+        font-size: 4rem;
+    }
 }
 
 @mixin title-md {
     @include title-lg;
     font-size: 3rem;
+
+    @media screen and (max-width: 48rem) {
+        font-size: 2rem;
+    }
 }
 
 @mixin title-sm {
     @include title-lg;
     font-size: 2rem;
+
+    @media screen and (max-width: 48rem) {
+        font-size: 1.5rem;
+    }
 }
 
 @mixin paragraph {
@@ -28,4 +40,8 @@
     font-weight: 400;
     font-style: normal;
     font-size: 1.5rem;
+
+    @media screen and (max-width: 48rem) {
+        font-size: 1.25rem;
+    }
 }

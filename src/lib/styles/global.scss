@@ -111,3 +111,7 @@ section {
         margin: 0 auto;
     }
 }
+
+main > *:last-child {
+    margin-bottom: auto;
+}
