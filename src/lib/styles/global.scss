@@ -94,7 +94,7 @@ a {
 
 #hero {
     background: var(--primary);
-    padding: var(--padding-128) var(--padding-32) var(--padding-64) var(--padding-32);
+    padding: var(--padding-128) var(--page-padding) var(--padding-64) var(--page-padding);
     display: flex;
     flex-direction: column;
     align-items: flex-start;

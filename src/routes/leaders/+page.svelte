@@ -54,13 +54,14 @@
             flex-wrap: wrap;
 
             .info {
-                min-width: max-content;
+                min-width: fit-content;
                 margin-right: auto;
             }
             
             .placeholder {
                 width: 20rem;
-                height: 20rem;
+                max-width: 85vw;
+                aspect-ratio: 1;
                 background: white;
             }
 

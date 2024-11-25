@@ -59,12 +59,13 @@
     #content {
         .section-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
             justify-items: center;
             gap: var(--padding-64);
 
             h2 {
                 text-align: center;
+                width: fit-content;
             }
         }
     }

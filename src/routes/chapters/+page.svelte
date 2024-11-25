@@ -87,6 +87,7 @@
 
             .placeholder {
                 width: 20rem;
+                max-width: 70vw;
                 height: 13rem;
                 background: white;
             }
