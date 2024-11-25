@@ -2,7 +2,7 @@
     import closeSrc from '$lib/icons/close.png';
     import menuSrc from '$lib/icons/menu.png';
 
-    let open = true;
+    let open = false;
 
     const toggleMenu = () => {
         open = !open;
@@ -69,7 +69,6 @@
                 background: none;
                 border: none;
                 cursor: pointer;
-                display: grid;
                 place-items: center;
             }
         }
@@ -118,7 +117,7 @@
                 align-items: center;
 
                 button {
-                    display: block;
+                    display: grid;
                 }
             }
         }
