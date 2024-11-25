@@ -60,6 +60,7 @@
             flex: 1 0 0;
             font-size: 2.25rem;
             line-height: 2rem;
+            height: 2rem;
             @include cursive;
 
             button {
