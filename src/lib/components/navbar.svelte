@@ -30,9 +30,9 @@
         <p><a href='/#contact' on:click={closeMenu}>contact</a></p>
     </div>
     <div class="outbound-links">
-        <p><a href='/chapters' on:click={closeMenu}>chapters</a></p>
-        <p><a href='/partners' on:click={closeMenu}>partners</a></p>
-        <p><a href='/leaders' on:click={closeMenu}>leaders</a></p>
+        <p><a href='/chapters.html' on:click={closeMenu}>chapters</a></p>
+        <p><a href='/partners.html' on:click={closeMenu}>partners</a></p>
+        <p><a href='/leaders.html' on:click={closeMenu}>leaders</a></p>
     </div>
 </nav>
 
