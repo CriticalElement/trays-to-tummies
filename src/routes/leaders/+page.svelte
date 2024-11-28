@@ -12,6 +12,9 @@
 	];
 </script>
 
+<svelte:head>
+	<title>trays to tummies - leaders</title>
+</svelte:head>
 <div id="hero">
 	<h1>leaders</h1>
 </div>

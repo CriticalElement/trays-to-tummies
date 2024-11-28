@@ -41,6 +41,9 @@
     ]
 </script>
 
+<svelte:head>
+	<title>trays to tummies - chapters</title>
+</svelte:head>
 <div id="hero">
 	<h1>chapters</h1>
 </div>

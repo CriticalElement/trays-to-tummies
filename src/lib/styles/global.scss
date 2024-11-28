@@ -7,8 +7,6 @@
 }
 
 html {
-    scroll-behavior: smooth;
-
     --text: black;
     --primary: #FF85C0;
     --secondary: black;
@@ -26,6 +24,10 @@ html {
     --page-padding: var(--padding-32);
     @media screen and (max-width: 27.5rem) {
         --page-padding: var(--padding-16);
+    }
+
+    &.smooth-scroll {
+        scroll-behavior: smooth;
     }
 }
 

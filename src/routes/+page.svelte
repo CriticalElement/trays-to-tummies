@@ -1,23 +1,59 @@
 <script lang="ts">
 	import Media from '$lib/components/media.svelte';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 
 	onMount(() => {
+		if ($page.url.pathname !== '/') {
+			goto($page.url.pathname, { replaceState: true });
+		}
+
 		const intersectionObserver = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					setTimeout(() => {
-						animateNumber({suffix: ' chapters', end: 36, digits: 2, element: document.querySelector('#chapters')!});
-						animateNumber({suffix: '+ items', end: 8000, digits: 4, element: document.querySelector('#items')!});
-						animateNumber({suffix: ' partnerships', end: 10, digits: 1, element: document.querySelector('#partnerships')!});
-						animateNumber({suffix: '+ impacted', end: 75000, digits: 5, element: document.querySelector('#impact')!});
+						animateNumber({
+							suffix: ' chapters',
+							end: 36,
+							digits: 2,
+							element: document.querySelector('#chapters')!
+						});
+						animateNumber({
+							suffix: '+ items',
+							end: 8000,
+							digits: 4,
+							element: document.querySelector('#items')!
+						});
+						animateNumber({
+							suffix: ' partnerships',
+							end: 10,
+							digits: 1,
+							element: document.querySelector('#partnerships')!
+						});
+						animateNumber({
+							suffix: '+ impacted',
+							end: 75000,
+							digits: 5,
+							element: document.querySelector('#impact')!
+						});
 					}, 200);
 					intersectionObserver.disconnect();
 				}
 			});
 		});
-	
-		const animateNumber = ({suffix, end, digits, element} : {suffix: string, end: number, digits: number, element: HTMLElement}) => {
+
+		const animateNumber = ({
+			suffix,
+			end,
+			digits,
+			element
+		}: {
+			suffix: string;
+			end: number;
+			digits: number;
+			element: HTMLElement;
+		}) => {
 			let current = 0;
 			let startTime: number | null = null;
 			const duration = 2000;
@@ -30,14 +66,17 @@
 				current = Math.floor((1 - Math.pow(1 - progress, 4)) * end);
 				element.textContent = `${current.toLocaleString(undefined, { minimumSignificantDigits: digits })}${suffix}`;
 				requestAnimationFrame(step);
-			}
+			};
 			requestAnimationFrame(step);
-		}
-	
+		};
+
 		intersectionObserver.observe(document.querySelector('#chapters')!);
 	});
 </script>
 
+<svelte:head>
+	<title>trays to tummies</title>
+</svelte:head>
 <section id="hero">
 	<h1>trays to tummies</h1>
 	<div class="info">
@@ -85,9 +124,9 @@
 		<div class="container">
 			<h2>about us!</h2>
 			<p>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam aliquid saepe rem veniam
-				unde magnam, eos quibusdam voluptas aspernatur ullam! Praesentium sunt dolore corporis quas
-				quaerat totam molestias fugiat provident!
+				in each of our chapters, we use donation boxes to collect unused food from the cafeteria.
+				with the collected food, we distribute it to our local partners where they can go to hungry
+				kids.
 			</p>
 			<Media>
 				<img src="/food-donation.jpg" alt="A donation box in a school." />
@@ -98,9 +137,12 @@
 				<img src="/donation-box.jpg" alt="A man carrying boxes of food to be delivered." />
 			</Media>
 			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero sunt natus totam repellat
-				consequuntur eveniet quibusdam, officia architecto tenetur dolorum, dolore in beatae, a
-				expedita ipsum corporis cum! Doloremque, saepe?
+				across our chapters, we have been able to donate over 8,000 items to students in need, and
+				spread our message to over 75,000 students. we will continue to grow to more chapters and
+				partner with more food banks to help more and more students in need.
+				<br /><br />
+				do you want to help feed hungry kids? to start a chapter, please contact us below, and give
+				us information about yourself and the school you go to—we will get back to you ASAP!
 			</p>
 		</div>
 	</div>
@@ -185,7 +227,7 @@
 
 			@media screen and (max-width: 86rem) {
 				flex-wrap: wrap;
-				
+
 				.divider {
 					display: none;
 				}
@@ -212,7 +254,7 @@
 	}
 
 	#contact {
-        background-color: var(--accent);
+		background-color: var(--accent);
 
 		.section-container {
 			display: flex;
@@ -245,7 +287,7 @@
 				@media screen and (max-width: 64rem) {
 					flex-direction: column;
 					align-items: center;
-					
+
 					.divider {
 						display: none;
 					}

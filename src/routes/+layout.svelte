@@ -1,7 +1,21 @@
 <script>
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import Footer from '$lib/components/footer.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
 	import '$lib/styles/global.scss';
+	import { onMount } from 'svelte';
+
+    onMount(() => {
+        document.querySelector('html')?.classList.add('smooth-scroll');
+    });
+
+    beforeNavigate(() => {
+        document.querySelector('html')?.classList.remove('smooth-scroll');
+    });
+
+    afterNavigate(() => {
+        document.querySelector('html')?.classList.add('smooth-scroll');
+    });
 </script>
 
 <Navbar />
