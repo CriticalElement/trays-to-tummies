@@ -2,13 +2,13 @@
 	import Media from "$lib/components/media.svelte";
 
 	const leaders = [
-		['Harish Balamurugan', 'Executive Director / CEO', ''],
+		['Harish Balamurugan', 'Executive Director / CEO', 'harish.jpg'],
 		['Anirudh', 'Executive Director / COO', ''],
-		['Srikar Koppana', 'Secretary', ''],
-		['Suhas Kondu', 'CMO', ''],
+		['Vedh Amara', 'CFO', 'vedh.jpg'],
+		['Suhas Kondu', 'CMO', 'suhas.jpg'],
 		['Mithun Kutuva', 'CGO', ''],
-		['Pranav Pakanati', 'CTO', ''],
-		['Vedh Amara', 'Historian', '']
+		['Pranav Pakanati', 'CTO', 'pranav.jpeg'],
+		['Srikar Koppana', 'Secretary', ''],
 	];
 </script>
 
@@ -30,7 +30,7 @@
                     {#if leader[2] === ''}
                         <div class='placeholder'></div>
                     {:else}
-                        <img src='/{leader[2]}' alt='{leader[0]}' />
+                        <img src='/leaders/{leader[2]}' alt='{leader[0]}' />
                     {/if}
                 </Media>
             </div>
@@ -61,13 +61,15 @@
                 margin-right: auto;
             }
             
-            .placeholder {
+            img, .placeholder {
                 width: 20rem;
                 max-width: 85vw;
+            }
+            
+            .placeholder {
                 aspect-ratio: 1;
                 background: white;
             }
-
             @media screen and (min-width: 64rem) {
                 &:nth-child(odd) {
                     flex-direction: row-reverse;
