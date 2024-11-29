@@ -15,27 +15,28 @@
 					setTimeout(() => {
 						animateNumber({
 							suffix: ' chapters',
-							end: 36,
+							end: 52,
 							digits: 2,
 							element: document.querySelector('#chapters')!
 						});
 						animateNumber({
 							suffix: '+ items',
-							end: 8000,
+							end: 7500,
 							digits: 4,
 							element: document.querySelector('#items')!
 						});
 						animateNumber({
 							suffix: ' partnerships',
-							end: 10,
+							end: 8,
 							digits: 1,
 							element: document.querySelector('#partnerships')!
 						});
 						animateNumber({
-							suffix: '+ impacted',
-							end: 75000,
-							digits: 5,
-							element: document.querySelector('#impact')!
+							suffix: '+ raised',
+							end: 1000,
+							digits: 4,
+							element: document.querySelector('#impact')!,
+							prefix: '$'
 						});
 					}, 200);
 					intersectionObserver.disconnect();
@@ -47,12 +48,14 @@
 			suffix,
 			end,
 			digits,
-			element
+			element,
+			prefix = ''
 		}: {
 			suffix: string;
 			end: number;
 			digits: number;
 			element: HTMLElement;
+			prefix?: string;
 		}) => {
 			let current = 0;
 			let startTime: number | null = null;
@@ -64,7 +67,7 @@
 				const timeElapsed = timestamp - startTime;
 				const progress = Math.min(timeElapsed / duration, 1);
 				current = Math.floor((1 - Math.pow(1 - progress, 4)) * end);
-				element.textContent = `${current.toLocaleString(undefined, { minimumSignificantDigits: digits })}${suffix}`;
+				element.textContent = `${prefix}${current.toLocaleString(undefined, { minimumSignificantDigits: digits })}${suffix}`;
 				requestAnimationFrame(step);
 			};
 			requestAnimationFrame(step);
@@ -99,22 +102,22 @@
 	<h2>benefiting our community</h2>
 	<div class="stats">
 		<div class="info">
-			<h3 id="chapters">36 chapters</h3>
+			<h3 id="chapters">54 chapters</h3>
 			<p>across local schools</p>
 		</div>
 		<div class="divider"></div>
 		<div class="info">
-			<h3 id="items">8,000+ items</h3>
+			<h3 id="items">7,500+ items</h3>
 			<p>donated to students</p>
 		</div>
 		<div class="divider"></div>
 		<div class="info">
-			<h3 id="partnerships">10 partnerships</h3>
-			<p>among food banks</p>
+			<h3 id="partnerships">8 partnerships</h3>
+			<p>among food banks<br />+ 2 sponsorships</p>
 		</div>
 		<div class="divider"></div>
 		<div class="info">
-			<h3 id="impact">75,000+ impacted</h3>
+			<h3 id="impact">$1,000 raised</h3>
 			<p>to date</p>
 		</div>
 	</div>
