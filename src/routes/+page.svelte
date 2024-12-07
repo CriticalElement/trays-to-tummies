@@ -103,7 +103,7 @@
 	<div class="stats">
 		<div class="info">
 			<h3 id="chapters">54 chapters</h3>
-			<p>across local schools</p>
+			<p>across schools</p>
 		</div>
 		<div class="divider"></div>
 		<div class="info">
