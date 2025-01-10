@@ -3,12 +3,12 @@
 
 	const leaders = [
 		['Harish Balamurugan', 'Executive Director / CEO', 'harish.jpg'],
-		['Anirudh', 'Executive Director / COO', ''],
+		['Anirudh', 'Executive Director / COO', 'anirudh.jpg'],
 		['Vedh Amara', 'CFO', 'vedh.jpg'],
 		['Suhas Kondu', 'CMO', 'suhas.jpg'],
-		['Mithun Kutuva', 'CGO', ''],
-		['Pranav Pakanati', 'CTO', 'pranav.jpeg'],
-		['Srikar Koppana', 'Secretary', ''],
+		['Mithun Kutuva', 'CGO', 'mithun.jpg'],
+		['Pranav Pakanati', 'CTO', 'pranav.jpg'],
+		['Srikar Koppana', 'Secretary', 'srikar.jpg'],
 	];
 </script>
 
@@ -64,6 +64,8 @@
             img, .placeholder {
                 width: 20rem;
                 max-width: 85vw;
+                aspect-ratio: 1;
+                object-fit: cover;
             }
             
             .placeholder {

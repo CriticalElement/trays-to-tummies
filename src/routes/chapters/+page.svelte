@@ -38,7 +38,13 @@
         ['', 'Suncoast HS', 'Riviera Beach, FL'],
         ['', 'Jacobs HS', 'Algonquin, IL'],
         ['', 'Eastview HS', 'Apple Valley, MN'],
-    ]
+        ['', 'Rockhill HS', 'Prosper, TX'],
+        ['', 'Nequa Valley HS', 'Naperville, IL'],
+        ['', 'Vista Ridge HS', 'Cedar Park, TX'],
+        ['', 'Lynville-Sully HS', 'Sully, IA'],
+        ['', 'Downington Stem Academy', 'Downington, PA'],
+        ['', 'Morris Catholic', 'Denville, NJ']
+    ];
 </script>
 
 <svelte:head>
